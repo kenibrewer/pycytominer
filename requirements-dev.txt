@@ -1,0 +1,4 @@
+black
+pytest
+codecov
+pre-commit

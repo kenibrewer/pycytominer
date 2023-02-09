@@ -15,6 +15,7 @@ If you are stuck, please feel free to ask any questions or ask for help.
 [How can I contribute?](#how-can-i-contribute)
   * [Bug reporting](#bug-reporting)
   * [Suggesting enhancements](#suggesting-enhancements)
+  * [Dev Environments](#dev-environments)
   * [Your first code contribution](#your-first-code-contribution)
   * [Pull requests](#pull-requests)
 
@@ -71,6 +72,14 @@ If you do find the suggestion, please comment on the existing issue noting that 
 If you do not find the suggestion, please open a new issue and clearly document the specific enhancement and why it would be helpful for your particular use case.
 
 Please provide your enhancement suggestions as an issue in the repository:
+
+### Dev Environments
+
+Cloud development configurations have been set up with both [Github Codespaces](https://docs.github.com/en/codespaces/overview) and [GitPod](https://www.gitpod.io/docs/introduction). These development environments have been set up with the local copy of the repository installed in development mode along with the tools  `black`, `pytest`, `codecov`. Pre-installed git hooks will ensure that any changed code is properly formatted by `black` prior to commits.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://open.vscode.dev/cytomining/pycytominer)
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/cytomining/pycytominer)
 
 ### Your first code contribution
 
