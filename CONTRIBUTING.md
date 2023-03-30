@@ -169,8 +169,10 @@ When appropriate, reference issues (via `#` plus number) .
 ### Python style guide
 
 For python code style, we use [black](https://github.com/psf/black).
+For markdown style, we use [prettier](https://prettier.io/).
 Please use black before committing any code.
 We will not accept code contributions that do not use black.
+If you have set up your development environment using one of the options above, required formatting tools will be installed and run automatically on any modified files before commits using [pre-commit](https://pre-commit.com/).
 
 ### Documentation style guide
 
