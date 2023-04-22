@@ -79,24 +79,13 @@ Please provide your enhancement suggestions as an issue in the repository:
 
 #### Manual Setup
 
-Instructions for setting up a local development environment in a virtual environment:
+General guidance for setting up a local development environment in Linux are provided below.
+It is strongly recommended to perform this within a virtual environment such as [conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) or [pyenv](https://akrabat.com/creating-virtual-environments-with-pyenv/):
 
 ```bash
 # Checkout the repository
 git clone https://github.com/cytomining/pycytominer.git
 cd pycytominer
-
-# Install pyenv if not already installed
-curl https://pyenv.run | bash
-# Follow the instructions printed by the above command to add pyenv to your path
-
-# Install python 3.10 into pyenv
-pyenv install 3.10
-
-# Create and activate a virtual environment
-pyenv virtualenv 3.10 pycytominer-dev
-pyenv activate pycytominer-dev
-
 # Install pycytominer in development mode along with associated tools
 bash .devcontainer/postCreateCommand.sh
 ```
@@ -169,7 +158,6 @@ When appropriate, reference issues (via `#` plus number) .
 ### Python style guide
 
 For python code style, we use [black](https://github.com/psf/black).
-For markdown style, we use [prettier](https://prettier.io/).
 Please use black before committing any code.
 We will not accept code contributions that do not use black.
 If you have set up your development environment using one of the options above, required formatting tools will be installed and run automatically on any modified files before commits using [pre-commit](https://pre-commit.com/).
@@ -177,3 +165,4 @@ If you have set up your development environment using one of the options above, 
 ### Documentation style guide
 
 We use the [numpy documentation style guide](https://numpydoc.readthedocs.io/en/latest/format.html).
+We also use [prettier](https://prettier.io/) for automatic formatting of markdown, json and yaml files.
