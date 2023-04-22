@@ -110,8 +110,11 @@ When you are ready to make a pull request, you can use the same cloud environmen
 These cloud environments can be launched by clicking on the following links:
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://open.vscode.dev/cytomining/pycytominer)
+
 [Beginner's Guide to Codespaces](https://github.blog/2023-02-22-a-beginners-guide-to-learning-to-code-with-github-codespaces/)
+
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/cytomining/pycytominer)
+
 [Beginner's Guide to Gitpod](https://www.gitpod.io/docs/introduction/getting-started)
 
 ### Your first code contribution
