@@ -13,6 +13,9 @@ with open(pathlib.Path("pycytominer/__about__.py")) as fp:
 with open("requirements.txt") as f:
     REQUIRED_PKGS = f.read().splitlines()
 
+with open("requirements-dev.txt") as f:
+    DEV_PKGS = f.read().splitlines()
+
 setup(
     name="pycytominer",
     version=ABOUT["__version__"],
@@ -23,7 +26,10 @@ setup(
     packages=find_packages(),
     license=ABOUT["__license__"],
     install_requires=REQUIRED_PKGS,
-    extras_require={"collate": ["cytominer-database==0.3.4"]},
+    extras_require={
+        "collate": ["cytominer-database==0.3.4"],
+        "dev": DEV_PKGS,
+    },
     python_requires=">=3.4",
     include_package_data=True,
 )
