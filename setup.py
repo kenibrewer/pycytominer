@@ -28,6 +28,12 @@ setup(
     install_requires=REQUIRED_PKGS,
     extras_require={
         "collate": ["cytominer-database==0.3.4"],
+        "cell_locations": [
+            "fsspec>=2023.1.0",
+            "s3fs>=0.4.2",
+            "boto3>=1.26.79",
+            "fire>=0.5.0",
+        ],
         "dev": DEV_PKGS,
     },
     python_requires=">=3.4",
