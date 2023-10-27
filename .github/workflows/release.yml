@@ -1,0 +1,58 @@
+name: Publish Python 🐍 distributions 📦 to PyPI and TestPyPI
+on: [release]
+
+env:
+  LANG: "en_US.utf-8"
+  LC_ALL: "en_US.utf-8"
+  PIP_CACHE_DIR: ${{ github.workspace }}/.cache/pip
+  POETRY_CACHE_DIR: ${{ github.workspace }}/.cache/pypoetry
+  POETRY_VIRTUALENVS_IN_PROJECT: "true"
+  PRE_COMMIT_HOME: ${{ github.workspace }}/.cache/pre-commit
+  PYTHONIOENCODING: "UTF-8"
+  TARGET_PYTHON_VERSION: "3.10"
+
+jobs:
+  build-and-publish:
+    name: Build and publish Python 🐍 distributions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️ repo with history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python 🐍 ${{ env.TARGET_PYTHON_VERSION }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.TARGET_PYTHON_VERSION }}
+      - name: Generate cache key PY
+        run:
+          echo "PY=$((python -VV; pip freeze) | sha256sum | cut -d' ' -f1)" >>
+          $GITHUB_ENV
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            .cache
+            .venv
+          key:
+            cache|${{ runner.os }}|${{ env.PY }}|${{ hashFiles('pyproject.toml') }}|${{
+            hashFiles('poetry.lock') }}|${{ hashFiles('.pre-commit-config.yaml') }}
+      - name: Install 📦 dependencies
+        shell: bash
+        run: |
+          python -m pip install poetry poetry-dynamic-versioning
+      - name: Build 📦 distributions
+        run: |
+          poetry build
+      - name: Publish any distribution 📦 to Test PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          repository-url: https://test.pypi.org/legacy/
+          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+      - name: Publish tagged distribution 📦 to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        if: startsWith(github.ref, 'refs/tags')
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
