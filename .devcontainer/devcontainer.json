@@ -4,7 +4,10 @@
   "name": "Pycytominer Dev",
   "image": "mcr.microsoft.com/devcontainers/python:0-3.11",
   "features": {
-    "ghcr.io/devcontainers-contrib/features/poetry:2": {}
+    // Install Poetry into the container.
+    "ghcr.io/devcontainers-contrib/features/poetry:2": {},
+    // Install pandoc for building/serving docs
+    "ghcr.io/rocker-org/devcontainer-features/pandoc:latest": {}
   },
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
