@@ -137,7 +137,7 @@ select = [
     # mccabe
     # "C90",
     # pycodestyle
-    # "E", "W",
+    "E", "W",
     # pyflakes
     # "F",
     # pygrep-hooks
