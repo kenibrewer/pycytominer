@@ -1,9 +1,10 @@
 """This tests the output from CellLocation class"""
 
+from typing import Type
+
 import pandas as pd
 import pytest
 import sqlalchemy
-from typing import Type
 from _pytest.fixtures import FixtureRequest
 
 

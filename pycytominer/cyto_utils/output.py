@@ -2,7 +2,7 @@
 Utility function to compress output data
 """
 
-from typing import Dict, Union, Optional
+from typing import Dict, Optional, Union
 
 import pandas as pd
 

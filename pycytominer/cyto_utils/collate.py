@@ -1,8 +1,8 @@
 import os
 import pathlib
+import sqlite3
 import subprocess
 import sys
-import sqlite3
 
 
 def run_check_errors(cmd):

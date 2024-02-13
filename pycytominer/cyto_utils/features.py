@@ -3,6 +3,7 @@ Utility function to manipulate cell profiler features
 """
 
 import os
+
 import pandas as pd
 
 blocklist_file = os.path.join(

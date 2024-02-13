@@ -133,7 +133,7 @@ select = [
     # flake8-simplify
     "SIM",
     # isort
-    # "I",
+    "I",
     # mccabe
     # "C90",
     # pycodestyle
