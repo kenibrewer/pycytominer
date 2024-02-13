@@ -139,7 +139,7 @@ select = [
     # pycodestyle
     "E", "W",
     # pyflakes
-    # "F",
+    "F",
     # pygrep-hooks
     # "PGH",
     # pyupgrade
@@ -155,6 +155,10 @@ ignore = [
     # DoNotAssignLambda
     "E731",
 ]
+
+[tool.ruff.lint.per-file-ignores]
+# Ignore `E402` (import violations) in all `__init__.py` files
+"__init__.py" = ["E402", "F401"]
 
 [tool.ruff.format]
 preview = true
